@@ -58,8 +58,7 @@ public class LoginController extends HttpServlet {
 		}catch(LoginException e) {
 			request.setAttribute("error", true);
 			request.setAttribute("message", e.getMessage());
-			//request.getRequestDispatcher("WEB-INF/templates/login.jsp").forward(request, response);
-			request.getRequestDispatcher("WEB-INF/templates/fragment/login-message.jsp").forward(request, response);
+			request.getRequestDispatcher("WEB-INF/templates/login.jsp").forward(request, response);
 		}
 	}
 	

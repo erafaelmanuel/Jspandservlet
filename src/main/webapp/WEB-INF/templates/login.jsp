@@ -10,7 +10,7 @@
 	</head>
 	<body>
 		<div id="wrapper">
-			<div id="message-panel"></div>
+			<c:if test="${error}"><div id="message-panel"><p>${message}</p></div></c:if>
 			<form action="login" method="post">
 				<input type="text" name="username" placeholder="username"/><br />
 				<input type="password" name="password" placeholder="password"/><br />
@@ -25,15 +25,6 @@
 			$(document).ready(function() {
 				$("form").submit(function() {
 					//validate
-					
-					var action = $(this).attr("action");
-					var param = $(this).serialize();
-
-					$.post(action, param, function(data, status) {
-						$("#message-panel").html(data);
-						$("#message-panel").css("display", "block");
-					});
-					return false;
 				});
 			});
 			
