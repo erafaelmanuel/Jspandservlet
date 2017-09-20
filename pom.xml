@@ -24,14 +24,15 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
-	
+    
 	<dependency>
-	    <groupId>org.apache.tomcat.embed</groupId>
-	    <artifactId>tomcat-embed-core</artifactId>
-	    <version>9.0.0.M26</version>
+	    <groupId>javax.servlet</groupId>
+	    <artifactId>javax.servlet-api</artifactId>
+	    <version>4.0.0</version>
 	    <scope>provided</scope>
 	</dependency>
-	
+
+    
 	<dependency>
 	    <groupId>javax.servlet</groupId>
 	    <artifactId>jstl</artifactId>
