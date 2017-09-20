@@ -6,14 +6,17 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>Login</title>
+		<link rel="stylesheet" href="static/css/login.css" />
 	</head>
 	<body>
-		<c:if test="${error}"><p>Invalid username or password</p></c:if>
-		<form action="login" method="post">
-			<input type="text" name="username" placeholder="username"/><br />
-			<input type="password" name="password" placeholder="password"/><br />
-			<button type="submit">Login</button>
-		</form>
+		<div id="wrapper">
+			<div id="message-panel"></div>
+			<form action="login" method="post">
+				<input type="text" name="username" placeholder="username"/><br />
+				<input type="password" name="password" placeholder="password"/><br />
+				<button type="submit">Login</button>
+			</form>
+		</div>
 	</body>
 	<script type="text/javascript" src="static/js/lib/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript">
@@ -23,6 +26,14 @@
 				$("form").submit(function() {
 					//validate
 					
+					var action = $(this).attr("action");
+					var param = $(this).serialize();
+
+					$.post(action, param, function(data, status) {
+						$("#message-panel").html(data);
+						$("#message-panel").css("display", "block");
+					});
+					return false;
 				});
 			});
 			
