@@ -1,0 +1,5 @@
+com\erm\sample\jee\exception\LoginException.class
+com\erm\sample\jee\servlet\controller\LoginController.class
+com\erm\sample\jee\servlet\controller\ThymeleafServletDispatcher.class
+com\erm\sample\jee\servlet\controller\WelcomeController.class
+com\erm\sample\jee\servlet\controller\LogoutController.class

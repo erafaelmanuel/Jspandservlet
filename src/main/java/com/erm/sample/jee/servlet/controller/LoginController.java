@@ -19,13 +19,14 @@ public class LoginController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
+
 		final HttpSession session = request.getSession(true);
-		
+
 		if(!session.isNew() && session.getAttribute("user") != null)
 			response.sendRedirect("welcome");
 		else {
 			request.setAttribute("error", false);
-	        request.getRequestDispatcher("WEB-INF/templates/login.jsp").forward(request, response);
+	        request.getRequestDispatcher("login.html").forward(request, response);
 		}
 	}
 
@@ -58,7 +59,7 @@ public class LoginController extends HttpServlet {
 		}catch(LoginException e) {
 			request.setAttribute("error", true);
 			request.setAttribute("message", e.getMessage());
-			request.getRequestDispatcher("WEB-INF/templates/login.jsp").forward(request, response);
+			request.getRequestDispatcher("login.html").forward(request, response);
 		}
 	}
 	

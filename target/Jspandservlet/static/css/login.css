@@ -1,0 +1,22 @@
+@charset "ISO-8859-1";
+
+body {
+	margin : 0px auto;
+	padding : 0px;
+	font-size : 12px;
+	text-align: center;
+}
+
+div#message-panel {
+	padding : 10px;
+	background : pink;
+	border : 2px solid red;
+	margin : 5px;
+}
+
+div#wrapper {
+	width : 30%;
+	border : 1px solid red;
+	margin : 0px auto;
+	padding : 5px;
+}

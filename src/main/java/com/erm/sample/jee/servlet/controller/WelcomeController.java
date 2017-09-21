@@ -22,7 +22,9 @@ public class WelcomeController extends HttpServlet {
 		
 		if(session.isNew() || session.getAttribute("user") == null)
 			response.sendRedirect("login");
-		else
-			request.getRequestDispatcher("WEB-INF/templates/welcome.jsp").forward(request, response);
+		else {
+			request.setAttribute("message", "Welcome " + session.getAttribute("user"));
+			request.getRequestDispatcher("welcome.html").forward(request, response);
+		}
 	}
 }
